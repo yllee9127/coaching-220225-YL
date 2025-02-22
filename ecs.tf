@@ -1,5 +1,12 @@
-# resource "aws_ecr_repository" "ecr" {
-#   name         = "yap-ecr"
+# Create two ECR repo for S3 and SQS services
+
+# resource "aws_ecr_repository" "flask-sqs-repo" {
+#   name         = "yap-flask-sqs-repo"
+#   force_delete = true
+# }
+
+# resource "aws_ecr_repository" "flask-s3-repo" {
+#   name         = "yap-flask-s3-repo"
 #   force_delete = true
 # }
 
@@ -29,8 +36,8 @@ module "ecs" {
           image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/yap-flask-s3-repo:latest"
           port_mappings = [
             {
-              containerPort = 8001
-              hostPort      = 8001
+              containerPort = 8080
+              hostPort      = 8080
               protocol      = "tcp"
             }
           ]
@@ -53,8 +60,8 @@ module "ecs" {
           image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/yap-flask-sqs-repo:latest"
           port_mappings = [
             {
-              containerPort = 8002
-              hostPort      = 8002
+              containerPort = 8081
+              hostPort      = 8081
               protocol      = "tcp"
             }
           ]
