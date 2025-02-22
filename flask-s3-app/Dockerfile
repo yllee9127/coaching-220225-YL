@@ -2,10 +2,10 @@
 FROM python:latest
 
 #Creating working directory inside container#
-WORKDIR /app
+WORKDIR /flask-s3-app
 
 #Copy source code into working directory inside container
-COPY . /app
+COPY . /flask-s3-app
 
 #Install flask inside container
 RUN pip install -r requirements.txt
