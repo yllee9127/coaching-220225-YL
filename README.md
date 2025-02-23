@@ -5,6 +5,7 @@
 
 <p>Prerequistes: VPC with public subnets, 2x ECRs created beforehand.
 
-<p>Step 1: Create the two services.
-<br>Step 2: Create ECS cluster.
+<p>Step 1: Created the two services
+<br>Step 2: Created ECS Cluster
+<br>Step 3: Created S3 Bucket with ACL "public-read"
 
