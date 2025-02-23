@@ -9,15 +9,15 @@ resource "aws_security_group" "ecs-s3-sg" {
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_inbound_8080" {
+resource "aws_vpc_security_group_ingress_rule" "allow_inbound_5001" {
   security_group_id = aws_security_group.ecs-s3-sg.id
   cidr_ipv4         = "0.0.0.0/0"
-  from_port         = 8080
+  from_port         = 5001
   ip_protocol       = "tcp"
-  to_port           = 8080
+  to_port           = 5001
 }
 
-resource "aws_vpc_security_group_egress_rule" "allow_outbound_8080" {
+resource "aws_vpc_security_group_egress_rule" "allow_outbound_5001" {
   security_group_id = aws_security_group.ecs-s3-sg.id
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
@@ -35,15 +35,15 @@ resource "aws_security_group" "ecs-sqs-sg" {
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_inbound_8081" {
+resource "aws_vpc_security_group_ingress_rule" "allow_inbound_5002" {
   security_group_id = aws_security_group.ecs-sqs-sg.id
   cidr_ipv4         = "0.0.0.0/0"
-  from_port         = 8081
+  from_port         = 5002
   ip_protocol       = "tcp"
-  to_port           = 8081
+  to_port           = 5002
 }
 
-resource "aws_vpc_security_group_egress_rule" "allow_outbound_8081" {
+resource "aws_vpc_security_group_egress_rule" "allow_outbound_5002" {
   security_group_id = aws_security_group.ecs-sqs-sg.id
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports

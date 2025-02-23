@@ -36,8 +36,8 @@ module "ecs" {
           image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/yap-flask-s3-repo:latest"
           port_mappings = [
             {
-              containerPort = 8080
-              hostPort      = 8080
+              containerPort = 5001
+              hostPort      = 5001
               protocol      = "tcp"
             }
           ]
@@ -60,8 +60,8 @@ module "ecs" {
           image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/yap-flask-sqs-repo:latest"
           port_mappings = [
             {
-              containerPort = 8081
-              hostPort      = 8081
+              containerPort = 5002
+              hostPort      = 5002
               protocol      = "tcp"
             }
           ]
