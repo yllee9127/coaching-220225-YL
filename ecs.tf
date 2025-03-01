@@ -55,7 +55,8 @@ module "ecs" {
       }
       assign_public_ip                   = true
       deployment_minimum_healthy_percent = 100
-      
+      create_tasks_iam_role              = false
+      tasks_iam_role_arn                 = aws_iam_role.ecs_task_role.arn
       subnet_ids                         = data.aws_subnets.public.ids
       security_group_ids                 = [aws_security_group.ecs-s3-sg.id]                                                       #Create a SG resource and pass it here
     }

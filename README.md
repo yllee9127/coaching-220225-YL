@@ -8,4 +8,5 @@
 <p>Step 1: Created the two services
 <br>Step 2: Created ECS Cluster
 <br>Step 3: Created S3 Bucket with ACL "public-read"
+<br>Step 4: Service 1 tested correct on 01 Mar 25
 
