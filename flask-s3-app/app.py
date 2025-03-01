@@ -36,7 +36,8 @@ UPLOAD_FORM = """
 def upload_file():
     if request.method == "GET":
         return render_template_string(UPLOAD_FORM)
-        file_obj = request.files.get("file")
+        
+    file_obj = request.files.get("file")
     if not file_obj or file_obj.filename.strip() == "":
         logger.warning("No valid file provided.")
         return "No valid file provided.", 400
