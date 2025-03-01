@@ -41,6 +41,16 @@ module "ecs" {
               protocol      = "tcp"
             }
           ]
+          environment = [
+            {
+              name  = "AWS_REGION"
+              value = "ap-southeast-1"
+            },
+            {
+              name  = "BUCKET_NAME"
+              value = "yap-bucket-220225"
+            }
+          ]
         }
       }
       assign_public_ip                   = true
@@ -65,6 +75,16 @@ module "ecs" {
               protocol      = "tcp"
             }
           ]
+          # environment = [
+          #   {
+          #     name  = "AWS_REGION"
+          #     value = "ap-southeast-1"
+          #   },
+          #   {
+          #     name  = "QUEUE_URL"
+          #     value = "jaz-sqs-service-queue"
+          #   }
+          # ]
         }
       }
       assign_public_ip                   = true
